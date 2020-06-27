@@ -9,7 +9,7 @@ class WeekColumns extends StatelessWidget {
 
   final Color labelTextColor;
 
-  final Map<DateTime, int> input;
+  final Map<Jalali, int> input;
 
   final Map<int, Color> colorThresholds;
 

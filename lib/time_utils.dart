@@ -40,8 +40,8 @@ class TimeUtils {
   }
 
   /// Sets a DateTime hours/minutes/seconds/microseconds/milliseconds to 0
-  static DateTime removeTime(DateTime dateTime) {
-    return DateTime(dateTime.year, dateTime.month, dateTime.day);
+  static Jalali removeTime(Jalali dateTime) {
+    return Jalali(dateTime.year, dateTime.month, dateTime.day);
   }
 
   /// Creates a list of [DateTime], including all days between [startDate] and [finishDate]
@@ -53,11 +53,10 @@ class TimeUtils {
 
     List<Jalali> datesList = new List();
     Jalali aux = startDate;
-    DateTime auxDateTime = aux.toDateTime();
     do {
       datesList.add(aux);
       aux = aux.addDays(1);
-    } while (finishDateDateTime.millisecondsSinceEpoch >= auxDateTime.millisecondsSinceEpoch);
+    } while (finishDateDateTime.millisecondsSinceEpoch >= aux.toDateTime().millisecondsSinceEpoch);
 
     return datesList;
   }
