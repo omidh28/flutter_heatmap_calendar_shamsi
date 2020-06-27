@@ -1,3 +1,7 @@
+## [1.0.4] - 2020-06-28
+
+* change direction of calender from now to next days
+
 ## [1.0.3] - 2020-06-28
 
 * change default month and week lables to jalali
