@@ -1,3 +1,7 @@
+## [1.0.3] - 2020-06-28
+
+* change default month and week lables to jalali
+
 ## [1.0.2] - 2020-06-28
 
 * fix datesBetween function loop bug

@@ -5,28 +5,28 @@ class TimeUtils {
   /// once Dart's DateTime counts months from 1 to 12
   static const List<String> defaultMonthsLabels = [
     "",
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
+    "فروردین",
+    "اردیبهشت",
+    "خرداد",
+    "تیر",
+    "مرداد",
+    "شهریور",
+    "مهر",
+    "آبان",
+    "آذر",
+    "دی",
+    "بهمن",
+    "اسفهند",
   ];
 
   static const List<String> defaultWeekLabels = [
-    'S',
-    'M',
-    'T',
-    'W',
-    'T',
-    'F',
-    'S'
+    'ج',
+    'ش',
+    'ی',
+    'د',
+    'س',
+    'چ',
+    'پ'
   ];
 
   /// Obtains the first day of the current week,
@@ -56,7 +56,8 @@ class TimeUtils {
     do {
       datesList.add(aux);
       aux = aux.addDays(1);
-    } while (finishDateDateTime.millisecondsSinceEpoch >= aux.toDateTime().millisecondsSinceEpoch);
+    } while (finishDateDateTime.millisecondsSinceEpoch >=
+        aux.toDateTime().millisecondsSinceEpoch);
 
     return datesList;
   }
