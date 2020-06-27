@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_calendar_shamsi.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calender_direction.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
 import 'package:shamsi_date/shamsi_date.dart';
 
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
             textOpacity: 0.3,
             labelTextColor: Colors.blueGrey,
             dayTextColor: Colors.blue[500],
+            direction: HeatmapCalenderDirection.NOW_TO_TOMORROW,
           ),
         ),
       ),

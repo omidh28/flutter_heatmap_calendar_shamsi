@@ -39,6 +39,10 @@ class TimeUtils {
     return day.addDays(DateTime.daysPerWeek * (columnsAmount - 1));
   }
 
+  static Jalali startDayOfCalendar(Jalali day, int columnsAmount) {
+    return day.addDays((DateTime.daysPerWeek * (columnsAmount - 1)) * -1);
+  }
+
   /// Sets a DateTime hours/minutes/seconds/microseconds/milliseconds to 0
   static Jalali removeTime(Jalali dateTime) {
     return Jalali(dateTime.year, dateTime.month, dateTime.day);

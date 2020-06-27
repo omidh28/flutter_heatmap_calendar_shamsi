@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calender_direction.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
 import 'package:heatmap_calendar_shamsi/week_columns.dart';
@@ -43,18 +44,22 @@ class HeatMapCalendar extends StatefulWidget {
   /// Helps avoiding overspacing issues
   final double safetyMargin;
 
-  const HeatMapCalendar(
-      {Key key,
-      @required this.input,
-      @required this.colorThresholds,
-      this.weekDaysLabels: TimeUtils.defaultWeekLabels,
-      this.monthsLabels: TimeUtils.defaultMonthsLabels,
-      this.squareSize: 16,
-      this.textOpacity: 0.2,
-      this.labelTextColor: Colors.black,
-      this.dayTextColor: Colors.black,
-      this.safetyMargin: 0})
-      : super(key: key);
+  /// direction of calender from now
+  final HeatmapCalenderDirection direction;
+
+  const HeatMapCalendar({
+    Key key,
+    @required this.input,
+    @required this.colorThresholds,
+    this.weekDaysLabels: TimeUtils.defaultWeekLabels,
+    this.monthsLabels: TimeUtils.defaultMonthsLabels,
+    this.squareSize: 16,
+    this.textOpacity: 0.2,
+    this.labelTextColor: Colors.black,
+    this.dayTextColor: Colors.black,
+    this.safetyMargin: 0,
+    this.direction: HeatmapCalenderDirection.NOW_TO_YESTERDAY,
+  }) : super(key: key);
 
   @override
   HeatMapCalendarState createState() {
@@ -103,6 +108,7 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
                   labelTextColor: widget.labelTextColor,
                 ),
                 WeekColumns(
+                  direction: widget.direction,
                   squareSize: widget.squareSize,
                   labelTextColor: widget.labelTextColor,
                   input: widget.input,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calender_direction.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/month_label.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
@@ -23,18 +24,21 @@ class WeekColumns extends StatelessWidget {
 
   final Jalali date;
 
-  const WeekColumns(
-      {Key key,
-      @required this.squareSize,
-      @required this.labelTextColor,
-      @required this.input,
-      @required this.colorThresholds,
-      @required this.currentOpacity,
-      @required this.monthLabels,
-      @required this.dayTextColor,
-      @required this.columnsToCreate,
-      @required this.date})
-      : super(key: key);
+  final HeatmapCalenderDirection direction;
+
+  const WeekColumns({
+    Key key,
+    @required this.squareSize,
+    @required this.labelTextColor,
+    @required this.input,
+    @required this.colorThresholds,
+    @required this.currentOpacity,
+    @required this.monthLabels,
+    @required this.dayTextColor,
+    @required this.columnsToCreate,
+    @required this.date,
+    @required this.direction,
+  }) : super(key: key);
 
   /// The main logic for generating a list of columns representing a week
   /// Each column is a week having a [MonthLabel] and 7 [HeatMapDay] widgets
@@ -101,8 +105,17 @@ class WeekColumns extends StatelessWidget {
   /// Creates a list of all weeks based on given [columnsAmount]
   List<Jalali> getCalendarDates(int columnsAmount) {
     Jalali firstDayOfTheWeek = TimeUtils.firstDayOfTheWeek(date);
-    Jalali endDayOfCalendar = TimeUtils.endDayOfCalendar(firstDayOfTheWeek, columnsAmount);
-    return TimeUtils.datesBetween(date, endDayOfCalendar);
+    Jalali endDayOfCalendar =
+        TimeUtils.endDayOfCalendar(firstDayOfTheWeek, columnsAmount);
+
+    Jalali startDayOfCalendar =
+        TimeUtils.startDayOfCalendar(firstDayOfTheWeek, columnsAmount);
+
+    if (direction == HeatmapCalenderDirection.NOW_TO_TOMORROW) {
+      return TimeUtils.datesBetween(date, endDayOfCalendar);
+    } else {
+      return TimeUtils.datesBetween(startDayOfCalendar, date);
+    }
   }
 
   @override

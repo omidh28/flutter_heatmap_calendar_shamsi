@@ -1,3 +1,7 @@
+## [1.0.5] - 2020-06-28
+
+* add bidirectional option to calender
+
 ## [1.0.4] - 2020-06-28
 
 * change direction of calender from now to next days
