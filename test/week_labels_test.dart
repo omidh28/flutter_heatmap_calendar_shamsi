@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/default_container.dart';
-import 'package:heatmap_calendar/week_labels.dart';
+import 'package:heatmap_calendar_shamsi/default_container.dart';
+import 'package:heatmap_calendar_shamsi/week_labels.dart';
 
 void main() {
   group('WeekLabels Widget', () {

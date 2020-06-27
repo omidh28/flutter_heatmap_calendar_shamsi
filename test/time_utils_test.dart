@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
 
 final DateTime startWeek = DateTime(2020, 5, 31);
 final DateTime friday = DateTime(2020, 6, 5);

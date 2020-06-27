@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar/heatmap_day.dart';
-import 'package:heatmap_calendar/time_utils.dart';
-import 'package:heatmap_calendar/week_columns.dart';
-import 'package:heatmap_calendar/week_labels.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/week_columns.dart';
+import 'package:heatmap_calendar_shamsi/week_labels.dart';
 
 class HeatMapCalendar extends StatefulWidget {
   static const double COLUMN_COUNT = 11;

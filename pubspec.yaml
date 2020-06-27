@@ -1,8 +1,8 @@
-name: heatmap_calendar
-description: A Heat Map Calendar based on Github's contributions chart which can be used to visualize values over time
-version: 1.2.5
-author: Pedro Feitosa <pedrohenriqueff@gmail.com>
-homepage: https://github.com/pedrohff/flutter_heatmap_calendar
+name: heatmap_calendar_shamsi
+description: A Heat Map Calendar based on heatmap_calendar but it uses shamsi calender 
+version: 1.0.0
+author: Omid Habibi <omidh14@gmail.com>
+homepage: https://github.com/omidh28/flutter_heatmap_calendar_shamsi
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

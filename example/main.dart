@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar/heatmap_calendar.dart';
-import 'package:heatmap_calendar/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calendar_shamsi.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
 
 void main() => runApp(MyApp());
 

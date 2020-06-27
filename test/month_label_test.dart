@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/month_label.dart';
+import 'package:heatmap_calendar_shamsi/month_label.dart';
 
 void main() {
   String text = "20";

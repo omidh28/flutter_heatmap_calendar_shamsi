@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/heatmap_day.dart';
-import 'package:heatmap_calendar/month_label.dart';
-import 'package:heatmap_calendar/time_utils.dart';
-import 'package:heatmap_calendar/week_columns.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
+import 'package:heatmap_calendar_shamsi/month_label.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/week_columns.dart';
 
 void main() {
   final int columnAmount = 10;

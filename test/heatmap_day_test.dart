@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/heatmap_day.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 
 void main() {
   group('HeatMapDay Widget', () {

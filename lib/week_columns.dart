@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar/heatmap_day.dart';
-import 'package:heatmap_calendar/month_label.dart';
-import 'package:heatmap_calendar/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
+import 'package:heatmap_calendar_shamsi/month_label.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
 
 class WeekColumns extends StatelessWidget {
   final double squareSize;

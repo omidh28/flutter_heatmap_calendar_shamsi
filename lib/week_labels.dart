@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar/default_container.dart';
+import 'package:heatmap_calendar_shamsi/default_container.dart';
 
 class WeekLabels extends StatelessWidget {
   final List<String> weekDaysLabels;

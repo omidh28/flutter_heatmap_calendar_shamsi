@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:heatmap_calendar/heatmap_calendar.dart';
-import 'package:heatmap_calendar/time_utils.dart';
-import 'package:heatmap_calendar/week_columns.dart';
-import 'package:heatmap_calendar/week_labels.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calendar_shamsi.dart';
+import 'package:heatmap_calendar_shamsi/time_utils.dart';
+import 'package:heatmap_calendar_shamsi/week_columns.dart';
+import 'package:heatmap_calendar_shamsi/week_labels.dart';
 
 void main() {
   var key = Key('calendarKey');
