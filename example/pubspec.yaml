@@ -1,7 +1,6 @@
-name: heatmap_calendar_usage
-description: An example on using the package flutter_heatmap_calendar
+name: heatmap_calendar_shamsi_usage
+description: An example on using the package flutter_heatmap_calendar_shamsi
 version: 1.0.0
-author: Pedro Feitosa <pedrohenriqueff@gmail.com>
 homepage: https://github.com/pedrohff/flutter_heatmap_calendar
 
 environment:
