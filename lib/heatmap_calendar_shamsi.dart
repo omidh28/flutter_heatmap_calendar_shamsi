@@ -3,6 +3,7 @@ import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
 import 'package:heatmap_calendar_shamsi/week_columns.dart';
 import 'package:heatmap_calendar_shamsi/week_labels.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 class HeatMapCalendar extends StatefulWidget {
   static const double COLUMN_COUNT = 11;
@@ -110,7 +111,7 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
                   monthLabels: widget.monthsLabels,
                   dayTextColor: widget.dayTextColor,
                   columnsToCreate: getColumnsToCreate(constraints.maxWidth) - 1,
-                  date: DateTime.now(),
+                  date: Jalali.now(),
                 )
               ],
             ),

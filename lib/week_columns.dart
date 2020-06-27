@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/month_label.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 class WeekColumns extends StatelessWidget {
   final double squareSize;
@@ -20,7 +21,7 @@ class WeekColumns extends StatelessWidget {
 
   final int columnsToCreate;
 
-  final DateTime date;
+  final Jalali date;
 
   const WeekColumns(
       {Key key,
@@ -38,7 +39,7 @@ class WeekColumns extends StatelessWidget {
   /// The main logic for generating a list of columns representing a week
   /// Each column is a week having a [MonthLabel] and 7 [HeatMapDay] widgets
   List<Widget> buildWeekItems() {
-    List<DateTime> dateList = getCalendarDates(columnsToCreate);
+    List<Jalali> dateList = getCalendarDates(columnsToCreate);
     int totalDays = dateList.length;
     var daysPerWeek = DateTime.daysPerWeek;
     int totalWeeks = (totalDays / daysPerWeek).ceil();
@@ -68,7 +69,7 @@ class WeekColumns extends StatelessWidget {
           text: month,
         ));
       } else {
-        DateTime currentDate = dateList.first;
+        Jalali currentDate = dateList.first;
         dateList.removeAt(0);
 
         final int value = (input[currentDate] == null) ? 0 : input[currentDate];
@@ -98,9 +99,9 @@ class WeekColumns extends StatelessWidget {
   }
 
   /// Creates a list of all weeks based on given [columnsAmount]
-  List<DateTime> getCalendarDates(int columnsAmount) {
-    DateTime firstDayOfTheWeek = TimeUtils.firstDayOfTheWeek(date);
-    DateTime firstDayOfCalendar = TimeUtils.firstDayOfCalendar(firstDayOfTheWeek, columnsAmount);
+  List<Jalali> getCalendarDates(int columnsAmount) {
+    Jalali firstDayOfTheWeek = TimeUtils.firstDayOfTheWeek(date);
+    Jalali firstDayOfCalendar = TimeUtils.firstDayOfCalendar(firstDayOfTheWeek, columnsAmount);
     return TimeUtils.datesBetween(firstDayOfCalendar, date);
   }
 

@@ -1,3 +1,5 @@
+import 'package:shamsi_date/shamsi_date.dart';
+
 class TimeUtils {
   /// The first element is an empty string,
   /// once Dart's DateTime counts months from 1 to 12
@@ -29,18 +31,12 @@ class TimeUtils {
 
   /// Obtains the first day of the current week,
   /// based on user's current day
-  static DateTime firstDayOfTheWeek(DateTime today) {
-    return today.subtract(new Duration(
-        days: (today.weekday % DateTime.daysPerWeek),
-        hours: today.hour,
-        minutes: today.minute,
-        seconds: today.second,
-        microseconds: today.microsecond,
-        milliseconds: today.millisecond));
+  static Jalali firstDayOfTheWeek(Jalali today) {
+    return today.addDays((today.weekDay % DateTime.daysPerWeek) * -1);
   }
 
-  static DateTime firstDayOfCalendar(DateTime day, int columnsAmount) {
-    return day.subtract(Duration(days: (DateTime.daysPerWeek * (columnsAmount - 1))));
+  static Jalali firstDayOfCalendar(Jalali day, int columnsAmount) {
+    return day.addDays((DateTime.daysPerWeek * (columnsAmount - 1)) * -1);
   }
 
   /// Sets a DateTime hours/minutes/seconds/microseconds/milliseconds to 0
@@ -49,15 +45,19 @@ class TimeUtils {
   }
 
   /// Creates a list of [DateTime], including all days between [startDate] and [finishDate]
-  static List<DateTime> datesBetween(DateTime startDate, DateTime finishDate) {
-    assert(startDate.isBefore(finishDate));
+  static List<Jalali> datesBetween(Jalali startDate, Jalali finishDate) {
+    DateTime startDateTime = startDate.toDateTime();
+    DateTime finishDateDateTime = finishDate.toDateTime();
 
-    List<DateTime> datesList = new List();
-    DateTime aux = startDate;
+    assert(startDateTime.isBefore(finishDateDateTime));
+
+    List<Jalali> datesList = new List();
+    Jalali aux = startDate;
+    DateTime auxDateTime = aux.toDateTime();
     do {
       datesList.add(aux);
-      aux = aux.add(Duration(days: 1));
-    } while (finishDate.millisecondsSinceEpoch >= aux.millisecondsSinceEpoch);
+      aux = aux.addDays(1);
+    } while (finishDateDateTime.millisecondsSinceEpoch >= auxDateTime.millisecondsSinceEpoch);
 
     return datesList;
   }
