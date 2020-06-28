@@ -1,6 +1,6 @@
 name: heatmap_calendar_shamsi
 description: A Heat Map Calendar based on heatmap_calendar but it also uses shamsi calender instead with some extra options
-version: 1.0.10+3
+version: 1.0.11
 homepage: https://github.com/omidh28/flutter_heatmap_calendar_shamsi
 
 environment:

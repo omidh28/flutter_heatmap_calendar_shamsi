@@ -1,3 +1,7 @@
+## [1.0.11] - 2020-06-29
+
+* fix bug where valued squares were all gray 
+
 ## [1.0.10+3] - 2020-06-29
 
 * better documents 

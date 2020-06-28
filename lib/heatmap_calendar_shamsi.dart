@@ -114,7 +114,7 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
                   direction: widget.direction,
                   squareSize: widget.squareSize,
                   labelTextColor: widget.labelTextColor,
-                  input: widget.input,
+                  inputValues: widget.input,
                   colorThresholds: widget.colorThresholds,
                   currentOpacity: currentOpacity,
                   dayTextColor: widget.dayTextColor,

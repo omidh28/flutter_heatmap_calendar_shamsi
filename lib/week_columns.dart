@@ -10,7 +10,7 @@ class WeekColumns extends StatelessWidget {
 
   final Color labelTextColor;
 
-  final Map<Jalali, int> input;
+  final Map<Jalali, int> inputValues;
 
   final Map<int, Color> colorThresholds;
 
@@ -32,7 +32,7 @@ class WeekColumns extends StatelessWidget {
     Key key,
     @required this.squareSize,
     @required this.labelTextColor,
-    @required this.input,
+    @required this.inputValues,
     @required this.colorThresholds,
     @required this.currentOpacity,
     @required this.dayTextColor,
@@ -93,7 +93,15 @@ class WeekColumns extends StatelessWidget {
         final currentDate = dateList.first;
         dateList.removeAt(0);
 
-        final int value = (input[currentDate] == null) ? 0 : input[currentDate];
+        int value;
+
+        if (calenderType == HeatMapCalenderType.SHAMSI) {
+          value =
+              (inputValues[currentDate] == null) ? 0 : inputValues[currentDate];
+        } else  {
+          final Jalali jalaliCurrentDate = TimeUtils.removeTime(Jalali.fromDateTime(currentDate as DateTime));
+          value =(inputValues[jalaliCurrentDate] == null) ? 0 : inputValues[jalaliCurrentDate];
+        }
 
         HeatMapDay heatMapDay = HeatMapDay(
           value: value,
