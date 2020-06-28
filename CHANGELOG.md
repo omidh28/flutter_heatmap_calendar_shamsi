@@ -1,3 +1,7 @@
+## [1.0.6] - 2020-06-28
+
+* tweak week lables
+
 ## [1.0.5] - 2020-06-28
 
 * add bidirectional option to calender

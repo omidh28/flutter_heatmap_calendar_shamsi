@@ -11,10 +11,6 @@ class HeatMapCalendar extends StatefulWidget {
   static const double ROW_COUNT = 8;
   static const double EDGE_SIZE = 4;
 
-  /// The labels identifying the initials of the days of the week
-  /// Defaults to [TimeUtils.defaultWeekLabels]
-  final List<String> weekDaysLabels;
-
   /// The labels identifying the months of a year
   /// Defaults to [TimeUtils.defaultMonthsLabels]
   final List<String> monthsLabels;
@@ -51,7 +47,6 @@ class HeatMapCalendar extends StatefulWidget {
     Key key,
     @required this.input,
     @required this.colorThresholds,
-    this.weekDaysLabels: TimeUtils.defaultWeekLabels,
     this.monthsLabels: TimeUtils.defaultMonthsLabels,
     this.squareSize: 16,
     this.textOpacity: 0.2,
@@ -103,7 +98,6 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
             child: Row(
               children: <Widget>[
                 WeekLabels(
-                  weekDaysLabels: widget.weekDaysLabels,
                   squareSize: widget.squareSize,
                   labelTextColor: widget.labelTextColor,
                 ),

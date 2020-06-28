@@ -105,6 +105,10 @@ class WeekColumns extends StatelessWidget {
   /// Creates a list of all weeks based on given [columnsAmount]
   List<Jalali> getCalendarDates(int columnsAmount) {
     Jalali firstDayOfTheWeek = TimeUtils.firstDayOfTheWeek(date);
+    print('first day unmber');
+    print(firstDayOfTheWeek.day);
+    print('first week number');
+    print(firstDayOfTheWeek.weekDay);
     Jalali endDayOfCalendar =
         TimeUtils.endDayOfCalendar(firstDayOfTheWeek, columnsAmount);
 

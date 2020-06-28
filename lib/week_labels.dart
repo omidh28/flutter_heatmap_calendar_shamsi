@@ -1,19 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:heatmap_calendar_shamsi/default_container.dart';
 
+const shamsiWeekLables = [
+  'ش',
+  'ی',
+  'د',
+  'س',
+  'چ',
+  'پ',
+  'چ',
+];
+
 class WeekLabels extends StatelessWidget {
-  final List<String> weekDaysLabels;
   final double squareSize;
   final Color labelTextColor;
 
   const WeekLabels(
-      {Key key,
-      @required this.weekDaysLabels,
-      @required this.squareSize,
-      @required this.labelTextColor})
-      : assert(weekDaysLabels != null),
-        assert(weekDaysLabels.length == 7),
-        assert(squareSize != null),
+      {Key key, @required this.squareSize, @required this.labelTextColor})
+      : assert(squareSize != null),
         assert(squareSize > 0),
         assert(labelTextColor != null),
         super(key: key);
@@ -29,37 +33,37 @@ class WeekLabels extends StatelessWidget {
           margin: 0,
         ),
         DefaultContainer(
-          text: weekDaysLabels[0],
+          text: shamsiWeekLables[0],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[1],
+          text: shamsiWeekLables[1],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[2],
+          text: shamsiWeekLables[2],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[3],
+          text: shamsiWeekLables[3],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[4],
+          text: shamsiWeekLables[4],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[5],
+          text: shamsiWeekLables[5],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: weekDaysLabels[6],
+          text: shamsiWeekLables[6],
           size: squareSize,
           textColor: labelTextColor,
         ),

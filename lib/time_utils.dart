@@ -19,16 +19,6 @@ class TimeUtils {
     "اسفهند",
   ];
 
-  static const List<String> defaultWeekLabels = [
-    'ج',
-    'ش',
-    'ی',
-    'د',
-    'س',
-    'چ',
-    'پ'
-  ];
-
   /// Obtains the first day of the current week,
   /// based on user's current day
   static Jalali firstDayOfTheWeek(Jalali today) {
