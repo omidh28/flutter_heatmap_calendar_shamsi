@@ -19,13 +19,34 @@ const shamsiWeekLables = [
   'چ',
 ];
 
+const gregorianWeekLables = [
+  'Sa',
+  'Su',
+  'M',
+  'Tu',
+  'W',
+  'Th',
+  'F',
+  'Sa',
+  'Su',
+  'M',
+  'Tu',
+  'W',
+  'Th',
+  'F',
+];
+
 class WeekLabels extends StatelessWidget {
   final double squareSize;
   final Color labelTextColor;
+  final Locale locale;
 
-  const WeekLabels(
-      {Key key, @required this.squareSize, @required this.labelTextColor})
-      : assert(squareSize != null),
+  const WeekLabels({
+    Key key,
+    @required this.squareSize,
+    @required this.labelTextColor,
+    @required this.locale,
+  })  : assert(squareSize != null),
         assert(squareSize > 0),
         assert(labelTextColor != null),
         super(key: key);
@@ -33,6 +54,11 @@ class WeekLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     int todayWeekDay = Jalali.now().weekDay;
+    List weekLables =
+        (locale.countryCode == 'IR' || locale.languageCode == 'fa')
+            ? shamsiWeekLables
+            : gregorianWeekLables;
+
     return Column(
       children: <Widget>[
         DefaultContainer(
@@ -42,37 +68,37 @@ class WeekLabels extends StatelessWidget {
           margin: 0,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay - 1],
+          text: weekLables[todayWeekDay - 1],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay],
+          text: weekLables[todayWeekDay],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay + 1],
+          text: weekLables[todayWeekDay + 1],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay + 2],
+          text: weekLables[todayWeekDay + 2],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay + 3],
+          text: weekLables[todayWeekDay + 3],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay + 4],
+          text: weekLables[todayWeekDay + 4],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[todayWeekDay + 5],
+          text: weekLables[todayWeekDay + 5],
           size: squareSize,
           textColor: labelTextColor,
         ),

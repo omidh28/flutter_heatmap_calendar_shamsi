@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar_shamsi/heatmap_calender_direction.dart';
+import 'package:heatmap_calendar_shamsi/heatmap_calendar_shamsi.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/month_label.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
@@ -16,15 +16,17 @@ class WeekColumns extends StatelessWidget {
 
   final double currentOpacity;
 
-  final List<String> monthLabels;
-
   final Color dayTextColor;
 
   final int columnsToCreate;
 
   final Jalali date;
 
-  final HeatmapCalenderDirection direction;
+  final HeatMapCalenderDirection direction;
+
+  final HeatMapCalenderType calenderType;
+
+  final MaterialLocalizations materialLocalizations;
 
   const WeekColumns({
     Key key,
@@ -33,17 +35,25 @@ class WeekColumns extends StatelessWidget {
     @required this.input,
     @required this.colorThresholds,
     @required this.currentOpacity,
-    @required this.monthLabels,
     @required this.dayTextColor,
     @required this.columnsToCreate,
     @required this.date,
     @required this.direction,
+    @required this.calenderType,
+    @required this.materialLocalizations,
   }) : super(key: key);
 
   /// The main logic for generating a list of columns representing a week
   /// Each column is a week having a [MonthLabel] and 7 [HeatMapDay] widgets
   List<Widget> buildWeekItems() {
-    List<Jalali> dateList = getCalendarDates(columnsToCreate);
+    List<Jalali> dateListShamsi = getCalendarDates(columnsToCreate);
+    List<DateTime> dateListGregorian =
+        dateListShamsi.map((jalaliDate) => jalaliDate.toDateTime()).toList();
+
+    List dateList = calenderType == HeatMapCalenderType.SHAMSI
+        ? dateListShamsi
+        : dateListGregorian;
+
     int totalDays = dateList.length;
     var daysPerWeek = DateTime.daysPerWeek;
     int totalWeeks = (totalDays / daysPerWeek).ceil();
@@ -63,7 +73,14 @@ class WeekColumns extends StatelessWidget {
         String month = "";
 
         if (dateList.isNotEmpty && !months.contains(dateList.first.month)) {
-          month = monthLabels[dateList.first.month];
+          if (calenderType == HeatMapCalenderType.SHAMSI) {
+            month = TimeUtils.shamsiMonthsLabels[dateList.first.month];
+          } else {
+            month = materialLocalizations
+                .formatMonthYear(dateList.first)
+                .split(' ')[0];
+          }
+
           months.add(dateList.first.month);
         }
 
@@ -73,7 +90,7 @@ class WeekColumns extends StatelessWidget {
           text: month,
         ));
       } else {
-        Jalali currentDate = dateList.first;
+        final currentDate = dateList.first;
         dateList.removeAt(0);
 
         final int value = (input[currentDate] == null) ? 0 : input[currentDate];
@@ -104,13 +121,12 @@ class WeekColumns extends StatelessWidget {
 
   /// Creates a list of all weeks based on given [columnsAmount]
   List<Jalali> getCalendarDates(int columnsAmount) {
-    Jalali endDayOfCalendar =
-        TimeUtils.endDayOfCalendar(date, columnsAmount);
+    Jalali endDayOfCalendar = TimeUtils.endDayOfCalendar(date, columnsAmount);
 
     Jalali startDayOfCalendar =
         TimeUtils.startDayOfCalendar(date, columnsAmount);
 
-    if (direction == HeatmapCalenderDirection.NOW_TO_TOMORROW) {
+    if (direction == HeatMapCalenderDirection.NOW_TO_TOMORROW) {
       return TimeUtils.datesBetween(date, endDayOfCalendar.addDays(6));
     } else {
       return TimeUtils.datesBetween(startDayOfCalendar, date.addDays(6));

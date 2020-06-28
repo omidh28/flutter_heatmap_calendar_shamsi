@@ -55,5 +55,8 @@ HeatMapCalendar(
     textOpacity: 0.3,
     labelTextColor: Colors.blueGrey,
     dayTextColor: Colors.blue[500],
+    direction: HeatMapCalenderDirection.NOW_TO_TOMORROW,
+    calenderType: HeatMapCalenderType.SHAMSI,
+    context: context,
   )
 ```

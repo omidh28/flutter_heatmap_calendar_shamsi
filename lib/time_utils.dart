@@ -3,7 +3,7 @@ import 'package:shamsi_date/shamsi_date.dart';
 class TimeUtils {
   /// The first element is an empty string,
   /// once Dart's DateTime counts months from 1 to 12
-  static const List<String> defaultMonthsLabels = [
+  static const List<String> shamsiMonthsLabels = [
     "",
     "فروردین",
     "اردیبهشت",

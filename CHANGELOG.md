@@ -1,3 +1,23 @@
+## [1.0.10+3] - 2020-06-29
+
+* better documents 
+
+## [1.0.10+2] - 2020-06-29
+
+* localizations of month lables 
+
+## [1.0.10+1] - 2020-06-29
+
+* minor bug fix 
+
+## [1.0.10] - 2020-06-29
+
+* translate weekdays to english 
+
+## [1.0.9] - 2020-06-28
+
+* add gregorian options for day numbers
+
 ## [1.0.8] - 2020-06-28
 
 * fix week lables in bidrections

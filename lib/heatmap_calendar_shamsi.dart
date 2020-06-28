@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:heatmap_calendar_shamsi/heatmap_calender_direction.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
 import 'package:heatmap_calendar_shamsi/time_utils.dart';
 import 'package:heatmap_calendar_shamsi/week_columns.dart';
 import 'package:heatmap_calendar_shamsi/week_labels.dart';
 import 'package:shamsi_date/shamsi_date.dart';
 
+enum HeatMapCalenderDirection { NOW_TO_TOMORROW, NOW_TO_YESTERDAY }
+
+enum HeatMapCalenderType { SHAMSI, GREGORIAN }
+
 class HeatMapCalendar extends StatefulWidget {
   static const double COLUMN_COUNT = 11;
   static const double ROW_COUNT = 8;
   static const double EDGE_SIZE = 4;
-
-  /// The labels identifying the months of a year
-  /// Defaults to [TimeUtils.defaultMonthsLabels]
-  final List<String> monthsLabels;
 
   /// The inputs that will fill the calendar with data
   final Map<Jalali, int> input;
@@ -41,19 +40,26 @@ class HeatMapCalendar extends StatefulWidget {
   final double safetyMargin;
 
   /// direction of calender from now
-  final HeatmapCalenderDirection direction;
+  final HeatMapCalenderDirection direction;
+
+  /// if its jalali or gregorian
+  final HeatMapCalenderType calenderType;
+
+  /// used to translate months and week days lables 
+  final BuildContext context;
 
   const HeatMapCalendar({
     Key key,
     @required this.input,
     @required this.colorThresholds,
-    this.monthsLabels: TimeUtils.defaultMonthsLabels,
+    @required this.context,
     this.squareSize: 16,
     this.textOpacity: 0.2,
     this.labelTextColor: Colors.black,
     this.dayTextColor: Colors.black,
     this.safetyMargin: 0,
-    this.direction: HeatmapCalenderDirection.NOW_TO_YESTERDAY,
+    this.direction: HeatMapCalenderDirection.NOW_TO_YESTERDAY,
+    this.calenderType: HeatMapCalenderType.SHAMSI,
   }) : super(key: key);
 
   @override
@@ -98,17 +104,19 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
             child: Row(
               children: <Widget>[
                 WeekLabels(
+                  locale: Localizations.localeOf(widget.context),
                   squareSize: widget.squareSize,
                   labelTextColor: widget.labelTextColor,
                 ),
                 WeekColumns(
+                  materialLocalizations: MaterialLocalizations.of(widget.context),
+                  calenderType: widget.calenderType,
                   direction: widget.direction,
                   squareSize: widget.squareSize,
                   labelTextColor: widget.labelTextColor,
                   input: widget.input,
                   colorThresholds: widget.colorThresholds,
                   currentOpacity: currentOpacity,
-                  monthLabels: widget.monthsLabels,
                   dayTextColor: widget.dayTextColor,
                   columnsToCreate: getColumnsToCreate(constraints.maxWidth) - 1,
                   date: Jalali.now(),
