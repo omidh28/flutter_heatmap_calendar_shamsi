@@ -25,6 +25,10 @@ class TimeUtils {
     return today.addDays((today.weekDay % DateTime.daysPerWeek) * -1);
   }
 
+  static Jalali lastDayOfTheWeek(Jalali today) {
+    return today.addDays(today.weekDay % DateTime.daysPerWeek);
+  }
+
   static Jalali endDayOfCalendar(Jalali day, int columnsAmount) {
     return day.addDays(DateTime.daysPerWeek * (columnsAmount - 1));
   }

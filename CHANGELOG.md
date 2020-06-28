@@ -1,3 +1,7 @@
+## [1.0.7] - 2020-06-28
+
+* tweak directions
+
 ## [1.0.6] - 2020-06-28
 
 * tweak week lables
