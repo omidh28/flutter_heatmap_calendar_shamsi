@@ -104,19 +104,16 @@ class WeekColumns extends StatelessWidget {
 
   /// Creates a list of all weeks based on given [columnsAmount]
   List<Jalali> getCalendarDates(int columnsAmount) {
-    Jalali firstDayOfTheWeek = TimeUtils.firstDayOfTheWeek(date);
-    Jalali lastDayOfTheWeek = TimeUtils.lastDayOfTheWeek(date);
-
     Jalali endDayOfCalendar =
-        TimeUtils.endDayOfCalendar(lastDayOfTheWeek, columnsAmount);
+        TimeUtils.endDayOfCalendar(date, columnsAmount);
 
     Jalali startDayOfCalendar =
-        TimeUtils.startDayOfCalendar(firstDayOfTheWeek, columnsAmount);
+        TimeUtils.startDayOfCalendar(date, columnsAmount);
 
     if (direction == HeatmapCalenderDirection.NOW_TO_TOMORROW) {
-      return TimeUtils.datesBetween(date, endDayOfCalendar);
+      return TimeUtils.datesBetween(date, endDayOfCalendar.addDays(6));
     } else {
-      return TimeUtils.datesBetween(startDayOfCalendar, date);
+      return TimeUtils.datesBetween(startDayOfCalendar, date.addDays(6));
     }
   }
 

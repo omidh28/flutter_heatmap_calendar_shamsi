@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:heatmap_calendar_shamsi/default_container.dart';
+import 'package:shamsi_date/shamsi_date.dart';
 
 const shamsiWeekLables = [
+  'ش',
+  'ی',
+  'د',
+  'س',
+  'چ',
+  'پ',
+  'چ',
   'ش',
   'ی',
   'د',
@@ -24,6 +32,7 @@ class WeekLabels extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int todayWeekDay = Jalali.now().weekDay;
     return Column(
       children: <Widget>[
         DefaultContainer(
@@ -33,37 +42,37 @@ class WeekLabels extends StatelessWidget {
           margin: 0,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[0],
+          text: shamsiWeekLables[todayWeekDay - 1],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[1],
+          text: shamsiWeekLables[todayWeekDay],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[2],
+          text: shamsiWeekLables[todayWeekDay + 1],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[3],
+          text: shamsiWeekLables[todayWeekDay + 2],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[4],
+          text: shamsiWeekLables[todayWeekDay + 3],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[5],
+          text: shamsiWeekLables[todayWeekDay + 4],
           size: squareSize,
           textColor: labelTextColor,
         ),
         DefaultContainer(
-          text: shamsiWeekLables[6],
+          text: shamsiWeekLables[todayWeekDay + 5],
           size: squareSize,
           textColor: labelTextColor,
         ),

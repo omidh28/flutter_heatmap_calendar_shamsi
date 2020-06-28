@@ -1,3 +1,15 @@
+## [1.0.8] - 2020-06-28
+
+* fix week lables in bidrections
+
+## [1.0.7+2] - 2020-06-28
+
+* minor change
+
+## [1.0.7+1] - 2020-06-28
+
+* minor change
+
 ## [1.0.7] - 2020-06-28
 
 * tweak directions
