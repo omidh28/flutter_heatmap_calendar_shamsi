@@ -44,7 +44,7 @@ class HeatMapCalendar extends StatefulWidget {
   /// if its jalali or gregorian
   final HeatMapCalenderType calenderType;
 
-  /// used to translate months and week days lables 
+  /// used to translate months and week days lables
   final BuildContext context;
 
   const HeatMapCalendar({
@@ -70,6 +70,12 @@ class HeatMapCalendar extends StatefulWidget {
 class HeatMapCalendarState extends State<HeatMapCalendar> {
   double currentOpacity = 0;
   bool displayDates = true;
+
+  @override
+  void initState() {
+    currentOpacity = widget.textOpacity;
+    super.initState();
+  }
 
   /// Toggles the labels in all [HeatMapDay]s
   void onDoubleTap() {
@@ -108,7 +114,8 @@ class HeatMapCalendarState extends State<HeatMapCalendar> {
                   labelTextColor: widget.labelTextColor,
                 ),
                 WeekColumns(
-                  materialLocalizations: MaterialLocalizations.of(widget.context),
+                  materialLocalizations:
+                      MaterialLocalizations.of(widget.context),
                   calenderType: widget.calenderType,
                   direction: widget.direction,
                   squareSize: widget.squareSize,

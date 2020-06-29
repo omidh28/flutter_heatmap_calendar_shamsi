@@ -1,3 +1,7 @@
+## [1.0.12+1] - 2020-06-30
+
+* show day lables by default 
+
 ## [1.0.12] - 2020-06-30
 
 * show day lables by default 
