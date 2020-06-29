@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:heatmap_calendar_shamsi/heatmap_day.dart';
-import 'package:heatmap_calendar_shamsi/time_utils.dart';
 import 'package:heatmap_calendar_shamsi/week_columns.dart';
 import 'package:heatmap_calendar_shamsi/week_labels.dart';
 import 'package:shamsi_date/shamsi_date.dart';
@@ -70,7 +69,7 @@ class HeatMapCalendar extends StatefulWidget {
 
 class HeatMapCalendarState extends State<HeatMapCalendar> {
   double currentOpacity = 0;
-  bool displayDates = false;
+  bool displayDates = true;
 
   /// Toggles the labels in all [HeatMapDay]s
   void onDoubleTap() {
