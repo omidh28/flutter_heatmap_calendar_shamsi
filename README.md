@@ -14,7 +14,7 @@ Also shamsi_date package is required
 
 ```
 dependencies:
-  heatmap_calendar_shamsi: ^1.2.5
+  heatmap_calendar_shamsi: ^1.0.12+2
   shamsi_date: ^0.8.1
 ```
 
@@ -40,6 +40,7 @@ import 'package:heatmap_calendar_shamsi/time_utils.dart';
 ...
 
 HeatMapCalendar(
+  // use Jalali.fromDateTime if using usual gregorian calender
   input: {
     TimeUtils.removeTime(Jalali.now().addDays(-3)): 5,
     TimeUtils.removeTime(Jalali.now().addDays(-2)): 35,
@@ -56,7 +57,7 @@ HeatMapCalendar(
     labelTextColor: Colors.blueGrey,
     dayTextColor: Colors.blue[500],
     direction: HeatMapCalenderDirection.NOW_TO_TOMORROW,
-    calenderType: HeatMapCalenderType.SHAMSI,
+    calenderType: HeatMapCalenderType.GREGORIAN,
     context: context,
   )
 ```
