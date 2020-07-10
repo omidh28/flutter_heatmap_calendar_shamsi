@@ -1,3 +1,7 @@
+## [1.0.12+4] - 2020-07-10
+
+* update screenshot 
+
 ## [1.0.12+3] - 2020-07-01
 
 * update readme 

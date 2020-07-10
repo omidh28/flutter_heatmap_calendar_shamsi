@@ -4,6 +4,8 @@ A Heat Map Calendar based on heatmap_calendar but it also uses shamsi calender i
 
 ![HeatMap Calendar in action](https://thumbs.gfycat.com/ImmaculateRequiredLarva.webp)
 
+<img src="https://github.com/omidh28/flutter_heatmap_calender_shamsi/blob/master/screenshots/screenshot_01.png?raw=true" height="500">
+
 
 ## Installing
 
@@ -14,7 +16,7 @@ Also shamsi_date package is required
 
 ```
 dependencies:
-  heatmap_calendar_shamsi: ^1.0.12+2
+  heatmap_calendar_shamsi: ^1.0.12+4
   shamsi_date: ^0.8.1
 ```
 
