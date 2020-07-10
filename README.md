@@ -1,8 +1,7 @@
-[![Build Status](https://travis-ci.org/pedrohff/flutter_heatmap_calendar.svg?branch=master)](https://travis-ci.org/pedrohff/flutter_heatmap_calendar)
-# Flutter Heat Map Calendar
+# Flutter Heat Map Shamsi Calendar
 A Heat Map Calendar based on heatmap_calendar but it also uses shamsi calender instead with some extra options like its bidirectional not just from past to today and also months are localized.
 
-<img src="https://github.com/omidh28/flutter_heatmap_calender_shamsi/blob/master/screenshots/screenshot-01.png?raw=true" height="500">
+<img src="https://raw.githubusercontent.com/omidh28/flutter_heatmap_calendar_shamsi/master/screenshots/screenshot-01.png" height="500">
 
 
 ## Installing
